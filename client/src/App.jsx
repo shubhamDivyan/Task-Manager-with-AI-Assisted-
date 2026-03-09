@@ -10,12 +10,12 @@ function App() {
   useEffect(() => {
     fetchTasks();
   }, []);
-
+  const API_URL="https://task-manager-with-ai-assisted.onrender.com"
   const fetchTasks = async () => {
     try {
       setLoading(true);
-      setError(null);
-      const response = await fetch('/api/tasks');
+      setError(null)
+      const response = await fetch(`${API_URL}/api/tasks`);
       if (!response.ok) throw new Error('Failed to fetch tasks');
       const data = await response.json();
       setTasks(data.tasks);
@@ -32,7 +32,7 @@ function App() {
     if (!newTask.trim()) return;
 
     try {
-      const response = await fetch('/api/tasks', {
+      const response = await fetch(`${API_URL}/api/tasks`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -55,7 +55,7 @@ function App() {
 
   const toggleTask = async (taskId, currentStatus) => {
     try {
-      const response = await fetch(`/api/tasks/${taskId}`, {
+      const response = await fetch(`${API_URL}/api/tasks/${taskId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ completed: !currentStatus })
