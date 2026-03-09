@@ -36,7 +36,7 @@ Task/
    npm run dev
    ```
 
-The server will run on `http://localhost:5000`
+The server will run on `https://task-manager-with-ai-assisted.onrender.com/`
 
 **Features:**
 - CORS enabled
@@ -62,7 +62,7 @@ The server will run on `http://localhost:5000`
    npm run dev
    ```
 
-The app will run on `http://localhost:5173`
+The app will run on `https://task-manager-with-ai-assisted-5hbzt4vb0.vercel.app/`
 
 **Features:**
 - React hooks (useState, useEffect)
